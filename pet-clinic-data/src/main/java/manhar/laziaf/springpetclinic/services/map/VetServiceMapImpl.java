@@ -2,9 +2,11 @@ package manhar.laziaf.springpetclinic.services.map;
 
 import manhar.laziaf.springpetclinic.model.Vet;
 import manhar.laziaf.springpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMapImpl extends AbstractServiceMap<Vet, Long> implements VetService
 {
     @Override

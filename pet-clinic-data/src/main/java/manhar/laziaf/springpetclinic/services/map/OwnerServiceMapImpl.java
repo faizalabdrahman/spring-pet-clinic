@@ -2,9 +2,11 @@ package manhar.laziaf.springpetclinic.services.map;
 
 import manhar.laziaf.springpetclinic.model.Owner;
 import manhar.laziaf.springpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> implements OwnerService
 {
     @Override

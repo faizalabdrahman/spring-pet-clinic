@@ -4,8 +4,6 @@ import manhar.laziaf.springpetclinic.model.Owner;
 import manhar.laziaf.springpetclinic.model.Vet;
 import manhar.laziaf.springpetclinic.services.OwnerService;
 import manhar.laziaf.springpetclinic.services.VetService;
-import manhar.laziaf.springpetclinic.services.map.OwnerServiceMapImpl;
-import manhar.laziaf.springpetclinic.services.map.VetServiceMapImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +13,10 @@ public class DataLoader implements CommandLineRunner
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader()
+    public DataLoader(OwnerService ownerService, VetService vetService)
     {
-        ownerService = new OwnerServiceMapImpl();
-        vetService = new VetServiceMapImpl();
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
