@@ -1,11 +1,11 @@
 package manhar.laziaf.springpetclinic.services.map;
 
 import manhar.laziaf.springpetclinic.model.Vet;
-import manhar.laziaf.springpetclinic.services.CrudService;
+import manhar.laziaf.springpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMapImpl extends AbstractServiceMap<Vet, Long> implements CrudService<Vet, Long>
+public class VetServiceMapImpl extends AbstractServiceMap<Vet, Long> implements VetService
 {
     @Override
     public Set<Vet> findAll()
