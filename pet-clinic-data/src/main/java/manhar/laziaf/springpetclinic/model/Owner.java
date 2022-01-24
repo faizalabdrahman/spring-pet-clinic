@@ -4,15 +4,15 @@ import java.util.Set;
 
 public class Owner extends Person
 {
-    private Set<Pet> pets;
+    private Set<Pet> petSet;
 
-    public Set<Pet> getPets()
+    public Set<Pet> getPetSet()
     {
-        return pets;
+        return petSet;
     }
 
-    public void setPets(Set<Pet> pets)
+    public void setPetSet(Set<Pet> petSet)
     {
-        this.pets = pets;
+        this.petSet = petSet;
     }
 }
