@@ -41,7 +41,7 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
 
         if(object != null)
         {
-            if(object.getPetSet() != null)
+            if(object.getPetSet().size() > 0)
             {
                 object.getPetSet().forEach(pet ->
                 {
