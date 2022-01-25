@@ -1,8 +1,10 @@
 package manhar.laziaf.springpetclinic.bootstrap;
 
 import manhar.laziaf.springpetclinic.model.Owner;
+import manhar.laziaf.springpetclinic.model.PetType;
 import manhar.laziaf.springpetclinic.model.Vet;
 import manhar.laziaf.springpetclinic.services.OwnerService;
+import manhar.laziaf.springpetclinic.services.PetTypeService;
 import manhar.laziaf.springpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,16 +14,26 @@ public class DataLoader implements CommandLineRunner
 {
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService)
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService)
     {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception
     {
+        PetType dogPetType = new PetType();
+        dogPetType.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dogPetType);
+
+        PetType catPetType = new PetType();
+        catPetType.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(catPetType);
+
         Owner owner1 = new Owner();
         owner1.setFirstName("Micheal");
         owner1.setLastName("Weston");
