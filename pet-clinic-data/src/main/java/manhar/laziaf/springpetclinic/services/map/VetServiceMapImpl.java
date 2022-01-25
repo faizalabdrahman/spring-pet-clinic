@@ -1,6 +1,8 @@
 package manhar.laziaf.springpetclinic.services.map;
 
+import manhar.laziaf.springpetclinic.model.Specialty;
 import manhar.laziaf.springpetclinic.model.Vet;
+import manhar.laziaf.springpetclinic.services.SpecialtyService;
 import manhar.laziaf.springpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,13 @@ import java.util.Set;
 @Service
 public class VetServiceMapImpl extends AbstractServiceMap<Vet, Long> implements VetService
 {
+    private final SpecialtyService specialtyService;
+
+    public VetServiceMapImpl(SpecialtyService specialtyService)
+    {
+        this.specialtyService = specialtyService;
+    }
+
     @Override
     public Set<Vet> findAll()
     {
@@ -24,7 +33,27 @@ public class VetServiceMapImpl extends AbstractServiceMap<Vet, Long> implements 
     @Override
     public Vet save(Vet object)
     {
-        return super.save(object);
+        Vet savedVet = null;
+
+        if(object != null)
+        {
+            if(object.getSpecialtySet().size() > 0)
+            {
+                object.getSpecialtySet().forEach(specialty ->
+                {
+                    if(specialty.getId() != null)
+                    {
+                        Specialty savedSpecialty = specialtyService.save(specialty);
+                        specialty.setId(savedSpecialty.getId());
+                    }
+                });
+            }
+            return super.save(object);
+        }
+        else
+        {
+            return null;
+        }
     }
 
     @Override
