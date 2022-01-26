@@ -4,5 +4,5 @@ Pet Clinic is a **Spring Boot** application built using **Maven**. This Web appl
 
 * Spring Boot - Backend Development.
 * Thymeleaf - Frontend Development.
-* Sourcetree - Git GUI that offers a visual representation of code repositories. Useful when working collaboratively with other developers.
+* Sourcetree - Git Collaborative tool for developers.
 
