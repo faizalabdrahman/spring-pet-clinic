@@ -9,6 +9,13 @@ import java.util.Set;
 @Service
 public class VisitServiceMapImpl extends AbstractServiceMap<Visit, Long> implements VisitService
 {
+    private final VisitService visitService;
+
+    public VisitServiceMapImpl(VisitService visitService)
+    {
+        this.visitService = visitService;
+    }
+
     @Override
     public Set<Visit> findAll()
     {
@@ -24,7 +31,8 @@ public class VisitServiceMapImpl extends AbstractServiceMap<Visit, Long> impleme
     @Override
     public Visit save(Visit object)
     {
-        if(object.getPet() == null || object.getPet().getOwner() == null || object.getPet().getId() == null || object.getPet().getOwner().getId() == null)
+        if(object.getPet() == null || object.getPet().getOwner() == null || object.getPet().getId() == null ||
+                object.getPet().getOwner().getId() == null)
         {
             throw new RuntimeException("Invalid visit");
         }
