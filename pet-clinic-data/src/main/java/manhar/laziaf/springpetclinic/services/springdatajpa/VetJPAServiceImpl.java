@@ -1,7 +1,6 @@
 package manhar.laziaf.springpetclinic.services.springdatajpa;
 
 import manhar.laziaf.springpetclinic.model.Vet;
-import manhar.laziaf.springpetclinic.repositories.SpecialtyRepository;
 import manhar.laziaf.springpetclinic.repositories.VetRepository;
 import manhar.laziaf.springpetclinic.services.VetService;
 import org.springframework.context.annotation.Profile;
@@ -16,12 +15,10 @@ import java.util.Set;
 public class VetJPAServiceImpl implements VetService
 {
     private final VetRepository vetRepository;
-    private final SpecialtyRepository specialtyRepository;
 
-    public VetJPAServiceImpl(VetRepository vetRepository, SpecialtyRepository specialtyRepository)
+    public VetJPAServiceImpl(VetRepository vetRepository)
     {
         this.vetRepository = vetRepository;
-        this.specialtyRepository = specialtyRepository;
     }
 
     @Override

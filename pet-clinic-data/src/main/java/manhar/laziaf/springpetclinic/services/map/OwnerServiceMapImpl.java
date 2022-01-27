@@ -37,11 +37,9 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
     @Override
     public Owner save(Owner object)
     {
-        Owner savedOwner = null;
-
         if(object != null)
         {
-            if(object.getPetSet().size() > 0)
+            if(object.getPetSet() != null)
             {
                 object.getPetSet().forEach(pet ->
                 {
@@ -54,7 +52,7 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
                         throw new RuntimeException("Pet Type is required");
                     }
 
-                    if(pet.getId() != null)
+                    if(pet.getId() == null)
                     {
                         Pet savedPet = petService.save(pet);
                         pet.setId(savedPet.getId());
@@ -63,10 +61,8 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
             }
             return super.save(object);
         }
-        else
-        {
-            return null;
-        }
+
+        return null;
     }
 
     @Override
