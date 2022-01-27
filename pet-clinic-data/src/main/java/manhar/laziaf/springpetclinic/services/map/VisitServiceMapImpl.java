@@ -2,11 +2,13 @@ package manhar.laziaf.springpetclinic.services.map;
 
 import manhar.laziaf.springpetclinic.model.Visit;
 import manhar.laziaf.springpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VisitServiceMapImpl extends AbstractServiceMap<Visit, Long> implements VisitService
 {
     @Override
