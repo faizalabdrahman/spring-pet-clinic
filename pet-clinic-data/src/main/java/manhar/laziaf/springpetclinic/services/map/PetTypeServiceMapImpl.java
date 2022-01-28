@@ -2,11 +2,13 @@ package manhar.laziaf.springpetclinic.services.map;
 
 import manhar.laziaf.springpetclinic.model.PetType;
 import manhar.laziaf.springpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PetTypeServiceMapImpl extends AbstractServiceMap<PetType, Long> implements PetTypeService
 {
     @Override

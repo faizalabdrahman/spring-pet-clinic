@@ -5,11 +5,13 @@ import manhar.laziaf.springpetclinic.model.Pet;
 import manhar.laziaf.springpetclinic.services.OwnerService;
 import manhar.laziaf.springpetclinic.services.PetService;
 import manhar.laziaf.springpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> implements OwnerService
 {
 
@@ -80,6 +82,10 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
     @Override
     public Owner findByLastName(String lastName)
     {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 }
