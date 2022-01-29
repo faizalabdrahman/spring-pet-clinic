@@ -4,6 +4,7 @@ import manhar.laziaf.springpetclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class OwnerController
@@ -27,4 +28,13 @@ public class OwnerController
     {
         return "notimplemented";
     }
+
+    @GetMapping("/owners/{ownerId}")
+    public String showOwner(@PathVariable("ownerId") Long ownerId, Model model)
+    {
+        model.addAttribute("owner", ownerService.findById(ownerId));
+
+        return "owners/ownerDetails";
+    }
+
 }
