@@ -1,7 +1,8 @@
 # Spring Pet Clinic
 
 <!-- badges -->
-![](https://img.shields.io/static/v1?logo=Spring%20Boot&label=spring-boot&&message=2.6.3&color=brightgreen&style=plastic)
+![SpringBoot](https://img.shields.io/static/v1?logo=Spring%20Boot&label=spring-boot&&message=2.6.3&color=brightgreen&style=plastic)
+![Thymeleaf](https://img.shields.io/static/v1?logo=Thymeleaf&logoColor=005f0f&label=Thymeleaf&colorA=ffffff&message=3.0.1&color=blue&style=plastic)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/faizalabdrahman/spring-pet-clinic?logo=GitHub&style=plastic)
 ![CircleCI](https://img.shields.io/circleci/build/github/faizalabdrahman/spring-pet-clinic/main?logo=CircleCI&logoColor=%23ffffff&style=plastic&token=464c51c97869ebcb54eff9a050880e7bf3b3cdf8)
 
