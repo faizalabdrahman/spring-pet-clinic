@@ -28,7 +28,7 @@ public class OwnerController
     }
 
     @GetMapping("/owners/find")
-    public String findOwners(Model model)
+    public String initFindOwnersForm(Model model)
     {
         model.addAttribute("owner", new Owner());
 
@@ -36,7 +36,7 @@ public class OwnerController
     }
 
     @PostMapping("/owners/show")
-    public String findOwnersResult(@ModelAttribute("owner") Owner owner)
+    public String processFindOwnersForm(@ModelAttribute("owner") Owner owner)
     {
         Owner returnedOwner = ownerService.findByLastName(owner.getLastName());
         System.out.println(owner.getLastName());
@@ -50,5 +50,37 @@ public class OwnerController
         model.addAttribute("owner", ownerService.findById(ownerId));
 
         return "owners/ownerDetails";
+    }
+
+    @GetMapping("/owners/new")
+    public String initNewOwnerForm(Model model)
+    {
+        model.addAttribute("owner", new Owner());
+
+        return "owners/createOrUpdateOwnerForm";
+    }
+
+    @PostMapping("/owners/create")
+    public String processNewOwnerForm(@ModelAttribute("owner") Owner owner)
+    {
+        Owner savedOwner = ownerService.save(owner);
+
+        return "redirect:/owners/" + savedOwner.getId();
+    }
+
+    @GetMapping("/owners/{ownerId}/edit")
+    public String initUpdateOwnerForm(@PathVariable("ownerId") Long ownerId, Model model)
+    {
+        model.addAttribute("owner", ownerService.findById(ownerId));
+
+        return "owners/createOrUpdateOwnerForm";
+    }
+
+    @PostMapping("/owners/{ownerId}/edit")
+    public String processUpdateOwnerForm(@PathVariable("ownerId") Long ownerId, @ModelAttribute("owner") Owner owner)
+    {
+        Owner savedOwner = ownerService.save(owner);
+
+        return "redirect:/owners/" + savedOwner.getId();
     }
 }
