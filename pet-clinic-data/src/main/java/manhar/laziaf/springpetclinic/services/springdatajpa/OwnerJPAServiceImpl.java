@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -73,5 +74,12 @@ public class OwnerJPAServiceImpl implements OwnerService
     public Owner findByLastName(String lastName)
     {
         return ownerRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName)
+    {
+        //todo
+        return null;
     }
 }
