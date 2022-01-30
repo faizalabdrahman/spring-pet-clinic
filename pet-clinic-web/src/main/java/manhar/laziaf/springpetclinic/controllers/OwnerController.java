@@ -19,7 +19,7 @@ public class OwnerController
         this.ownerService = ownerService;
     }
 
-    @GetMapping({ "/owners/index", "/owners/index/html"})
+    @GetMapping({"/owners", "/owners/index", "/owners/index/html"})
     public String listOwners(Model model)
     {
         model.addAttribute("owners", ownerService.findAll());
@@ -35,7 +35,7 @@ public class OwnerController
         return "owners/findOwners";
     }
 
-    @PostMapping("/owners")
+    @PostMapping("/owners/show")
     public String findOwnersResult(@ModelAttribute("owner") Owner owner)
     {
         Owner returnedOwner = ownerService.findByLastName(owner.getLastName());

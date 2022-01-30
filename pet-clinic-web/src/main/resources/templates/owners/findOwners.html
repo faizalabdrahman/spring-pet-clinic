@@ -8,7 +8,7 @@
     <!--/*@thymesVar id="owner" type="manhar.laziaf.springpetclinic.model.Owner"*/-->
     <h2>Find Owners</h2>
 
-    <form th:object="${owner}" th:action="@{/owners}" method="post"
+    <form th:object="${owner}" th:action="@{/owners/show}" method="post"
           class="form-horizontal" id="search-owner-form">
         <div class="form-group">
             <div class="control-group" id="lastNameGroup">
