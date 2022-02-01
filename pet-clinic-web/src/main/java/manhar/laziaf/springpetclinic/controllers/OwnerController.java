@@ -67,20 +67,4 @@ public class OwnerController
 
         return "redirect:/owners/" + savedOwner.getId();
     }
-
-    @GetMapping("/owners/{ownerId}/edit")
-    public String initUpdateOwnerForm(@PathVariable("ownerId") Long ownerId, Model model)
-    {
-        model.addAttribute("owner", ownerService.findById(ownerId));
-
-        return "owners/createOrUpdateOwnerForm";
-    }
-
-    @PostMapping("/owners/{ownerId}/edit")
-    public String processUpdateOwnerForm(@PathVariable("ownerId") Long ownerId, @ModelAttribute("owner") Owner owner)
-    {
-        Owner savedOwner = ownerService.save(owner);
-
-        return "redirect:/owners/" + savedOwner.getId();
-    }
 }

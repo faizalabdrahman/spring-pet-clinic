@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>
+    <th:block th:if="${pet['new']}">New </th:block>
+    Pet
+  </h2>
+
+</body>
+
+</html>

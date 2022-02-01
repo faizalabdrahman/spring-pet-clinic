@@ -37,7 +37,6 @@ public class OwnerControllerTest
 
     MockMvc mockMvc;
 
-
     @BeforeEach
     public void setUp()
     {
@@ -107,28 +106,6 @@ public class OwnerControllerTest
         when(ownerService.save(any())).thenReturn(owner);
 
         mockMvc.perform(post("/owners/create"))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:/owners/1"))
-                .andExpect(model().attributeExists("owner"));
-    }
-
-    @Test
-    public void initUpdateOwnerForm() throws Exception
-    {
-        when(ownerService.findById(anyLong())).thenReturn(owner);
-
-        mockMvc.perform(get("/owners/1/edit"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("owners/createOrUpdateOwnerForm"))
-                .andExpect(model().attributeExists("owner"));
-    }
-
-    @Test
-    public void processUpdateOwnerForm() throws Exception
-    {
-        when(ownerService.save(any())).thenReturn(owner);
-
-        mockMvc.perform(post("/owners/1/edit"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"))
                 .andExpect(model().attributeExists("owner"));
