@@ -2,7 +2,6 @@
 
 <!-- badges -->
 ![SpringBoot](https://img.shields.io/static/v1?logo=Spring%20Boot&label=spring-boot&&message=2.6.3&color=yellow&style=plastic)
-![Thymeleaf](https://img.shields.io/static/v1?logo=Thymeleaf&logoColor=ffffff&label=Thymeleaf&colorA=005f0f&message=2.6.3&color=blue&style=plastic)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/faizalabdrahman/spring-pet-clinic?logo=GitHub&style=plastic)
 ![CircleCI](https://img.shields.io/circleci/build/github/faizalabdrahman/spring-pet-clinic/main?logo=CircleCI&logoColor=%23ffffff&style=plastic&token=464c51c97869ebcb54eff9a050880e7bf3b3cdf8)
 
