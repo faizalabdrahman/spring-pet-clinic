@@ -30,13 +30,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PetControllerTest
 {
     @Mock
+    OwnerService ownerService;
+
+    @Mock
     PetService petService;
 
     @Mock
     PetTypeService petTypeService;
-
-    @Mock
-    OwnerService ownerService;
 
     @InjectMocks
     PetController petController;
@@ -97,7 +97,7 @@ public class PetControllerTest
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
 
-        verify(petService.save(any()));
+        verify(petService).save(any());
     }
 
     @Test
@@ -118,13 +118,12 @@ public class PetControllerTest
     public void processUpdatePetForm() throws Exception
     {
         when(ownerService.findById(anyLong())).thenReturn(owner);
-        when(petService.findById(anyLong())).thenReturn(petDog);
         when(petTypeService.findAll()).thenReturn(petTypeSet);
 
-        mockMvc.perform(post("/owners/1/pets/2/edit"))
+        mockMvc.perform(post("/owners/1/pets/1/edit"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
 
-        verify(petService.save(any()));
+        verify(petService).save(any());
     }
 }
