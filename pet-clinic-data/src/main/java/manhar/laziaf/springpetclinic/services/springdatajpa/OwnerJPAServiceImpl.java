@@ -79,7 +79,6 @@ public class OwnerJPAServiceImpl implements OwnerService
     @Override
     public List<Owner> findAllByLastNameLike(String lastName)
     {
-        //todo
-        return null;
+        return ownerRepository.findAllByLastNameLike(lastName);
     }
 }
