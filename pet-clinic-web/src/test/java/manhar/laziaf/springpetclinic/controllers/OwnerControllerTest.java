@@ -14,10 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.hasProperty;
-import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.isNotNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -68,7 +65,7 @@ public class OwnerControllerTest
         mockMvc.perform(get("/owners/index"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/index"))
-                .andExpect(model().attributeExists("owners", isNotNull()));
+                .andExpect(model().attributeExists("owners"));
     }
 
     @Test
@@ -80,13 +77,15 @@ public class OwnerControllerTest
     }
 
     @Test
-    public void displayOwner() throws Exception
+    public void showOwner() throws Exception
     {
         when(ownerService.findById(anyLong())).thenReturn(owner);
 
         mockMvc.perform(get("/owners/1"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/ownerDetails"))
-                .andExpect(model().attribute("owner", hasProperty("id", is(1L))));
+                .andExpect(model().attributeExists("owner"));
+
+
     }
 }
