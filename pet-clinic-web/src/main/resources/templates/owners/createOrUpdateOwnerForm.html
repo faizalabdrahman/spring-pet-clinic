@@ -8,7 +8,7 @@
     <!--/*@thymesVar id="owner" type="manhar.laziaf.springpetclinic.model.Owner"*/-->
     <h2>Owner</h2>
 
-    <form th:object="${owner}" class="form-horizontal" id="add-owner-form" th:action="@{/owners/create}" method="post">
+    <form th:object="${owner}" class="form-horizontal" id="add-owner-form" method="post">
         <div class="form-group has-feedback">
             <input th:replace="~{fragments/inputField :: input ('First Name', 'firstName', 'text')}" />
             <input th:replace="~{fragments/inputField :: input ('Last Name', 'lastName', 'text')}" />
