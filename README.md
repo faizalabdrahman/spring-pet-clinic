@@ -1,17 +1,12 @@
 # Spring Pet Clinic
 
 <!-- badges -->
-![SpringBoot](https://img.shields.io/static/v1?logo=Spring%20Boot&label=spring-boot&&message=2.6.3&color=yellow&style=plastic)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/faizalabdrahman/spring-pet-clinic?style=plastic)
-![CircleCI](https://img.shields.io/circleci/build/github/faizalabdrahman/spring-pet-clinic/main?logo=CircleCI&logoColor=%23ffffff&style=plastic&token=464c51c97869ebcb54eff9a050880e7bf3b3cdf8)
+![](https://img.shields.io/badge/Code-Spring_Boot-informational?style=flat&logo=spring%20boot&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Code-Thymeleaf-informational?style=flat&logo=thymeleaf&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Editor-IntelliJ_IDEA-informational?style=flat&logo=intellij-idea&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Tools-CircleCI-informational?style=flat&logo=circleci&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Tools-Sourcetree-informational?style=flat&logo=sourcetree&logoColor=white&color=2bbc8a)
 
 Pet Clinic is a **Spring Boot** application built using **Maven**. This Web application is based on a school project, however, it will undergo continuous enhancement to stay current with industry standards and practices.
 
-**Technology used** are:
-
-* Spring Boot - Backend Development.
-* Thymeleaf - Frontend Development.
-* JUnit, Mockito - Testing Frameworks
-* Sourcetree - Git Collaborative tool for developers.
-* CircleCI - Continuous Integration (CI/CD)
 
